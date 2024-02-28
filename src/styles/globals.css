@@ -25,3 +25,20 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@layer components {
+
+  .flex-center {
+    @apply flex items-center justify-center
+  }
+
+  .flex-one-line {
+    @apply flex items-center
+  }
+}
+
+
+.button-reset {
+ border: none;
+  background: transparent;
+}
