@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { Button } from '@/components/button/button';
+import { Button } from '@/components/common/button/button';
 import { LogoIcon } from '@/icons/logo.icon';
 
 const NavbarRoutes = [
@@ -8,11 +8,12 @@ const NavbarRoutes = [
   { id:1,name:'Services',link:'/' },
   { id:2,name:'Technologies',link:'/' },
   { id:2,name:'How to',link:'/' },
+  { id:2,name:'Open source',link:'/' },
 ];
 
 export function Navbar() {
   return (
-    <div className='flex flex-row justify-between sticky top-0 mt-5'>
+    <div className='flex flex-row justify-between sticky top-0 py-5 bg-black/80 backdrop-blur-md'>
       <div className='flex-one-line justify-between w-1/2 gap-x-5'>
         <button type='button' className='button-reset text-blueberry-300 flex-one-line'>
           <LogoIcon size={100}/>

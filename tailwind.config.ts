@@ -7,12 +7,13 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      ['blueberry-100']: '#8176AF',
-      ['blueberry-200']: '#C0B7E8',
-      ['blueberry-300']: '#8b50ff'
-    },
     extend: {
+      colors: {
+        ['blueberry-100']: '#8176AF',
+        ['blueberry-200']: '#C0B7E8',
+        ['blueberry-300']: '#8b50ff',
+        ['blue-gray-900']: '#23475F'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
