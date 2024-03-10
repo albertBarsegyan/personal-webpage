@@ -5,7 +5,7 @@ import { MapCheckIcon } from '@/icons/map-check-icon';
 import { MailIcon } from '@/icons/mail-icon';
 import { PhoneIcon } from '@/icons/phone-icon';
 
-const separator = <div className='h-28 w-px bg-blueberry-200 rounded-3xl mx-10'/>;
+const separator = <div className='h-28 w-px bg-blueberry-200 rounded-3xl'/>;
 
   export function HeroSection() {
   return (
@@ -26,7 +26,7 @@ const separator = <div className='h-28 w-px bg-blueberry-200 rounded-3xl mx-10'/
         </div>
       </div>
 
-      <div className='flex items-center justify-center flex-row p-6 rounded-full bg-blue-gray-900 mt-20'>
+      <div className='flex items-center justify-between flex-row p-6 rounded-full bg-blue-gray-900 mt-20'>
         <div className='flex flex-row items-center gap-x-2'>
           <div>
             <MapCheckIcon/>

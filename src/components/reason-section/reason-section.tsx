@@ -53,8 +53,8 @@ export function ReasonSection() {
       </div>
 
       <div className='flex flex-row items-center mt-20 gap-x-5 justify-center'>
-        {BestPoints.map(({ id, ...data }) => (<Card  key={id} data={data}/>))}
+        {BestPoints.map(({ id, ...data }) => <Card  key={id} data={data}/>)}
       </div>
     </div>
   );
-};
+}
