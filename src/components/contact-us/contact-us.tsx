@@ -74,7 +74,7 @@ export function ContactUs() {
   };
 
   return (
-    <div className='mt-10 bg-blue-gray-900 rounded-3xl p-10'>
+    <div className='mt-10 bg-primary rounded-3xl p-10'>
       <div className='flex justify-center items-center flex-col'>
         <span className='text-5xl font-bold'>Contact Us</span>
         <p className='text-2xl mt-5'>Let’s Build Your VR Experience</p>

@@ -15,7 +15,7 @@ export function Navbar() {
   return (
     <div className='flex flex-row justify-between sticky top-0 py-5 bg-black/80 backdrop-blur-md z-10'>
       <div className='flex-one-line justify-between w-1/2 gap-x-5'>
-        <button type='button' className='button-reset text-blueberry-300 flex-one-line'>
+        <button type='button' className='button-reset text-secondary flex-one-line'>
           <LogoIcon size={100}/>
         </button>
 

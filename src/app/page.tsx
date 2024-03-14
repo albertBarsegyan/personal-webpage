@@ -7,7 +7,7 @@ import { Footer } from '@/components/footer/footer';
 
 export default function Home() {
   return (
-    <div className='min-h-full'>
+    <div>
       <HeroSection/>
       <AboutUsSection/>
       <ReasonSection/>

@@ -21,12 +21,12 @@ const separator = <div className='h-28 w-px bg-blueberry-200 rounded-3xl'/>;
           </div>
         </div>
 
-        <div className='text-blueberry-300'>
+        <div className='text-secondary'>
           <PcIcon size={400}/>
         </div>
       </div>
 
-      <div className='flex items-center justify-between flex-row p-6 rounded-full bg-blue-gray-900 mt-20'>
+      <div className='flex items-center justify-between flex-row p-6 rounded-full bg-primary mt-20'>
         <div className='flex flex-row items-center gap-x-2'>
           <div>
             <MapCheckIcon/>
