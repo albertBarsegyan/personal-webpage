@@ -4,14 +4,15 @@ import { PcIcon } from '@/icons/pc-icon';
 import { MapCheckIcon } from '@/icons/map-check-icon';
 import { MailIcon } from '@/icons/mail-icon';
 import { PhoneIcon } from '@/icons/phone-icon';
+import { LogoIcon } from '@/icons/logo.icon';
 
-const separator = <div className='h-28 w-px bg-blueberry-200 rounded-3xl'/>;
+const separator = <div className='h-28 w-px bg-forth rounded-3xl'/>;
 
   export function HeroSection() {
   return (
     <div className='mt-10'>
       <div className='w-full flex justify-between items-center'>
-        <div>
+        <div className='mr-4'>
           <h1 className='text-5xl'>Lorem ipsum dolor sit.</h1>
           <p className='max-w-xl text-xl mt-5'>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur enim et eveniet maiores nam nobis, quibusdam rem! Culpa, earum error fuga incidunt numquam pariatur sit!
@@ -21,19 +22,24 @@ const separator = <div className='h-28 w-px bg-blueberry-200 rounded-3xl'/>;
           </div>
         </div>
 
-        <div className='text-secondary'>
-          <PcIcon size={400}/>
+        <div className='relative'>
+          <div className='text-secondary'>
+            <PcIcon size={400}/>
+          </div>
+          <div className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-55%]'>
+            <LogoIcon/>
+          </div>
         </div>
       </div>
 
-      <div className='flex items-center justify-between flex-row p-6 rounded-full bg-primary mt-20'>
+      <div className='flex items-center justify-between flex-row py-6 px-16 rounded-full bg-primary mt-20'>
         <div className='flex flex-row items-center gap-x-2'>
           <div>
             <MapCheckIcon/>
           </div>
           <div>
-            <span>Pay Us a Visit</span>
-            <p>Union St, Seattle, WA 98101, United States</p>
+            <span>Meet Us</span>
+            <p>Everywhere in Armenia, Yerevan</p>
           </div>
         </div>
         {separator}
@@ -42,8 +48,8 @@ const separator = <div className='h-28 w-px bg-blueberry-200 rounded-3xl'/>;
             <MailIcon/>
           </div>
           <div>
-            <span>Pay Us a Visit</span>
-            <p>Union St, Seattle, WA 98101, United States</p>
+            <span>Mail us</span>
+            <a href="mailto:albertbarsegyan6@gmail.com" className='block'>albertbarsegyan6@gmail.com</a>
           </div>
         </div>
         {separator}
@@ -52,8 +58,8 @@ const separator = <div className='h-28 w-px bg-blueberry-200 rounded-3xl'/>;
             <PhoneIcon/>
           </div>
           <div>
-            <span>Pay Us a Visit</span>
-            <p>Union St, Seattle, WA 98101, United States</p>
+            <span>Call us</span>
+            <p>+374 (94)-77-07-13</p>
           </div>
         </div>
       </div>

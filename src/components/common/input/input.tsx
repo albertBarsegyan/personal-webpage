@@ -13,7 +13,7 @@ export const Input = ({ placeholder,value,onChange, className }:InputProps) => {
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className={`appearance-none border-4 border-blueberry-200 border-solid rounded-3xl py-4 px-6 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent ${className ?? ''}`}
+      className={`appearance-none border-2 border-blueberry-200 border-solid rounded-3xl py-4 px-6 text-white leading-tight focus:outline-none focus:shadow-outline bg-transparent ${className ?? ''}`}
       type="text"
     />
   );

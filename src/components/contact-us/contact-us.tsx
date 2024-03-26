@@ -81,10 +81,7 @@ export function ContactUs() {
       </div>
       <form className='flex flex-col gap-4 mt-20' onSubmit={handleSubmit}>
         <div className='flex items-center w-full justify-between gap-x-5'>
-          <div className='w-full'>
-            <Input placeholder='Full Name' className='w-full' value={state.name} onChange={(e) => handleChange('name', e.target.value)} />
-            {state.errors.name && <span className="text-red-500">{state.errors.name}</span>}
-          </div>
+
           <div className='w-full'>
             <Input placeholder='Email' className='w-full' value={state.email} onChange={(e) => handleChange('email', e.target.value)} />
             {state.errors.email && <span className="text-red-500">{state.errors.email}</span>}
@@ -96,7 +93,7 @@ export function ContactUs() {
         </div>
       </form>
       <div className='w-full flex justify-center mt-5'>
-        <Button type="submit" className='md:w-1/3 w-full h-14 text-2xl'>Send us</Button>
+        <Button variant='secondary' type="submit" className='md:w-1/3 w-full h-14 text-2xl'>Send us</Button>
       </div>
     </div>
   );
