@@ -42,9 +42,9 @@ const BestPoints = [
 export function ReasonSection() {
   return (
     <div className='mt-6'>
-      <div className='flex justify-between'>
+      <div className='flex md:flex-row flex-col justify-between'>
         <h3 className='font-bold text-2xl'>Why work with Yacko</h3>
-        <p className='max-w-3xl'>
+        <p className='max-w-3xl mt-4 md:mt-0'>
           Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat
           nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo
           quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare

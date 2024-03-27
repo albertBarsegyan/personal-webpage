@@ -4,27 +4,26 @@ import { CodeIllustration } from '@/icons/code-illustration';
 
 export function AboutUsSection() {
   return (
-    <div className='mt-20'>
-      <div className='flex flex-row justify-between'>
-        <div>
-          <h2 className='font-bold text-2xl'>Introduction</h2>
-        </div>
-        <div>
-          <p className='max-w-3xl text-base'>Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat
-            nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo
-            quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare
-            lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.</p>
-        </div>
+    <div className='mt-10 md:mt-20'>
+      <div className='flex flex-col md:flex-row justify-between'>
+
+        <h2 className='font-bold text-2xl'>Introduction</h2>
+
+        <p className='max-w-3xl text-base mt-4 md:mt-0'>Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat
+          nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo
+          quis imperdiet massa tincidunt nunc. Viverra aliquet eget sit amet tellus. Ornare
+          lectus sit amet est placerat in. Lectus magna fringilla urna porttitor rhoncus vitae.</p>
+
       </div>
 
-      <div className='flex flex-row justify-between align-middle mt-24'>
+      <div className='flex flex-col-reverse gap-x-0 md:gap-x-4 md:flex-row justify-between align-middle mt-24'>
         <div>
-          <CodeIllustration size={400}/>
+          <CodeIllustration className='w-full md:w-100' size={400}/>
         </div>
 
         <div>
-          <span className='text-3xl font-bold'>About something</span>
-          <p className='max-w-3xl text-base mt-10'>
+          <span className='md:text-3xl text-xl font-bold'>About something</span>
+          <p className='max-w-3xl text-base mt-5 md:mt-10'>
             Eget mi proin sed libero enim sed faucibus turpis. Nisl rhoncus mattis rhoncus
             urna neque viverra justo. Vivamus at augue eget arcu dictum. Ultrices gravida
             dictum fusce ut placerat orci. Aenean et tortor at risus viverra adipiscing at in.

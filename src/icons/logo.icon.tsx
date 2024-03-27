@@ -1,8 +1,9 @@
 import { IconsType } from '@/types/icons-type';
 
-export function LogoIcon({ size = 150,color ='currentColor' }:IconsType) {
+export function LogoIcon({ size = 150,color ='currentColor',className }:IconsType) {
   return (
     <svg
+      className={className}
       version="1.1"
       id="svg1"
       width={size}

@@ -1,6 +1,8 @@
-export function CodeIllustration({ size }:{size:number}) {
+import { IconsType } from '@/types/icons-type';
+
+export function CodeIllustration({ size, className }:IconsType) {
   return (
-    <svg width={size} height={size}  xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 823 823" viewBox="0 0 823 823"
+    <svg className={className} width={size} height={size}  xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 823 823" viewBox="0 0 823 823"
          id="software-engineer">
       <path fill="#1C394C"
             d="M727.5 121.6h-619c-12.4 0-22.5 10-22.5 22.4v426.3h664V144c0-12.4-10.1-22.4-22.5-22.4z"></path>
