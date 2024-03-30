@@ -2,7 +2,7 @@
 import { Input } from '@/components/common/input/input';
 import { Textarea } from '@/components/common/textarea/textarea';
 import { Button } from '@/components/common/button/button';
-import { FormEvent, useReducer } from 'react';
+import { ChangeEvent, FormEvent, useReducer } from 'react';
 
 const initialState = {
   name: '',
@@ -83,7 +83,7 @@ export function ContactUs() {
         <div className='flex items-center w-full justify-between gap-x-5'>
 
           <div className='w-full'>
-            <Input placeholder='Email' className='w-full' value={state.email} onChange={(e) => handleChange('email', e.target.value)} />
+            <Input placeholder='Email' className='w-full' value={state.email} onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange('email', e.target.value)} />
             {state.errors.email && <span className="text-red-500">{state.errors.email}</span>}
           </div>
         </div>
