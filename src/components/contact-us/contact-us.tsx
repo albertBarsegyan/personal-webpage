@@ -74,12 +74,12 @@ export function ContactUs() {
   };
 
   return (
-    <div className='mt-10 bg-primary rounded-3xl p-10'>
+    <div className='mt-10 bg-primary rounded-3xl p-5 md:p-10'>
       <div className='flex justify-center items-center flex-col'>
-        <span className='text-5xl font-bold'>Contact Us</span>
-        <p className='text-2xl mt-5'>Let’s Build Your VR Experience</p>
+        <span className='text-2xl md:text-3xl font-bold'>Contact Us</span>
+        <p className='text-lg md:text-2xl mt-2 md:mt-5'>Let’s Build Your VR Experience</p>
       </div>
-      <form className='flex flex-col gap-4 mt-20' onSubmit={handleSubmit}>
+      <form className='flex flex-col gap-4 mt-8 md:mt-20' onSubmit={handleSubmit}>
         <div className='flex items-center w-full justify-between gap-x-5'>
 
           <div className='w-full'>

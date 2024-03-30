@@ -42,8 +42,8 @@ const BestPoints = [
 export function ReasonSection() {
   return (
     <div className='mt-6'>
-      <div className='flex md:flex-row flex-col justify-between'>
-        <h3 className='font-bold text-2xl'>Why work with Yacko</h3>
+      <div className='flex md:flex-row flex-col justify-between gap-x-2'>
+        <h3 className='font-bold text-2xl flex-shrink-0'>Why work with Yacko</h3>
         <p className='max-w-3xl mt-4 md:mt-0'>
           Vitae sapien pellentesque habitant morbi tristique senectus et netus et. Feugiat
           nibh sed pulvinar proin gravida hendrerit lectus. Mi sit amet mauris commodo
@@ -52,7 +52,7 @@ export function ReasonSection() {
         </p>
       </div>
 
-      <div className='flex flex-row items-center mt-20 gap-x-5 justify-center'>
+      <div className='grid justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 md:mt-16'>
         {BestPoints.map(({ id, ...data }) => <Card  key={id} data={data}/>)}
       </div>
     </div>

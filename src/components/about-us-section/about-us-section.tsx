@@ -5,7 +5,7 @@ import { CodeIllustration } from '@/icons/code-illustration';
 export function AboutUsSection() {
   return (
     <div className='mt-10 md:mt-20'>
-      <div className='flex flex-col md:flex-row justify-between'>
+      <div className='flex flex-col md:flex-row justify-between gap-x-4'>
 
         <h2 className='font-bold text-2xl'>Introduction</h2>
 
@@ -16,7 +16,7 @@ export function AboutUsSection() {
 
       </div>
 
-      <div className='flex flex-col-reverse gap-x-0 md:gap-x-4 md:flex-row justify-between align-middle mt-24'>
+      <div className='flex flex-col-reverse gap-x-0 md:gap-x-4 md:flex-row justify-between align-middle mt-10 md:mt-24'>
         <div>
           <CodeIllustration className='w-full md:w-100' size={400}/>
         </div>
@@ -35,7 +35,7 @@ export function AboutUsSection() {
             n tempor.
           </p>
 
-          <Button className='mt-6' onClick={()=>{}}>Get in touch</Button>
+          <Button className='mt-6 w-full md:w-fit' onClick={()=>{}}>Get in touch</Button>
         </div>
       </div>
     </div>

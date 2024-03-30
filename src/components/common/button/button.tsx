@@ -9,12 +9,12 @@ interface ButtonProps extends  PropsWithChildren {
 }
 
 export function Button({ type = 'button', children, onClick, variant = 'primary',className }:ButtonProps) {
-  const buttonStyles = classNames({
+  const buttonStyles = classNames(className,{
     ['h-12 flex-center rounded-3xl px-8 font-bold']:true,
     ['bg-secondary border-0']: variant === 'primary',
     ['bg-transparent border border-white color-transparent']: variant === 'secondary',
     ['bg-transparent border-0']: variant === 'icon'
-  }, className);
+  });
 
   return (
     <button className={buttonStyles} onClick={onClick} type={type}>

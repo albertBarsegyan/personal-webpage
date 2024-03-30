@@ -8,6 +8,7 @@ import { MenuIcon } from '@/icons/menu-icon';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Power2 } from 'gsap/gsap-core';
+import { useOverflow } from '@/hooks/use-overflow';
 
 const NavbarRoutes = [
   { id:0,name:'About',link:'/' },
@@ -22,7 +23,7 @@ const MobileNavbar = () => {
   const [isMenuOpen,setIsMenuOpen] = useState(false);
 
 const { contextSafe } = useGSAP(()=> {
-      tl.current = gsap.timeline({ paused:true,defaults: { duration:0.3 } }).to('.menu-icon > path:first-child',{
+      tl.current = gsap.timeline({ paused:true,defaults: { duration:0.2 } }).to('.menu-icon > path:first-child',{
         x:1,
         attr:{ d: 'M8,2 L2,8' },
         color:'#ff6961',
@@ -37,13 +38,31 @@ const { contextSafe } = useGSAP(()=> {
       },'start').to('.mobile-menu-open',{
         autoAlpha:1,
         height:'100%'
-      });
+      }).to('.mobile-menu-links-wrapper > a:first-child',{
+        height:'auto'
+      })
+        .to('.mobile-menu-links-wrapper > a:nth-child(2)',{
+        height:'auto'
+      })
+        .to('.mobile-menu-links-wrapper > a:nth-child(3)',{
+          height:'auto'
+        })
+        .to('.mobile-menu-links-wrapper > a:nth-child(4)',{
+          height:'auto'
+        })
+        .to('.email-button',{
+          autoAlpha:1
+        }).to('.contact-button',{
+          autoAlpha:1
+        });
   });
 
   const toggleMenu =  contextSafe(() => {
     setIsMenuOpen(prev=> !prev);
-      !isMenuOpen ? tl.current.play() : tl.current.reverse();
+      isMenuOpen ? tl.current.reverse() : tl.current.play();
   });
+
+  useOverflow(isMenuOpen);
 
   return (
     <>
@@ -63,13 +82,13 @@ const { contextSafe } = useGSAP(()=> {
       </div>
 
       <div className='overflow-hidden opacity-0 mobile-menu-open fixed top-[140px] left-0 bottom-0 w-full h-0 bg-black/80 backdrop-blur-md z-10 '>
-        <div className='px-5 flex flex-col justify-center gap-5 flex-shrink-0'>
-          {NavbarRoutes.map((route) => (<Link className='text-center text-2xl' key={route.id} href={route.link}>{route.name}</Link>))}
+        <div className='px-5 flex flex-col justify-center gap-5 flex-shrink-0 mobile-menu-links-wrapper'>
+          {NavbarRoutes.map((route) => (<Link className='text-center text-2xl h-0 overflow-hidden' key={route.id} href={route.link}>{route.name}</Link>))}
 
-          <Button variant='primary' onClick={() => {
+          <Button className='opacity-0 overflow-hidden email-button' variant='primary' onClick={() => {
           }}>EMAIL US</Button>
 
-          <Button variant='secondary'>CONTACT US</Button>
+          <Button className='opacity-0 overflow-hidden contact-button' variant='secondary'>CONTACT US</Button>
 
         </div>
       </div>
@@ -79,7 +98,7 @@ const { contextSafe } = useGSAP(()=> {
 
 const DesktopNavbar = () => {
   return (
-    <div className='flex flex-row justify-between sticky top-0 py-5 bg-black/80 backdrop-blur-md z-10 px-20 mx-auto'>
+    <div className='flex flex-row justify-between sticky top-0 py-5 bg-black/80 backdrop-blur-md z-10 mx-auto lg:px-20'>
       <div className='flex-one-line justify-between w-1/2 gap-x-5'>
         <button type='button' className='button-reset text-secondary flex-one-line'>
           <LogoIcon size={100}/>
@@ -106,7 +125,7 @@ export function Navbar() {
   const isMobile = width <= 1100;
 
   return (
-    <div className='md:max-w-7xl max-w-full mx-auto'>
+    <div className='md:max-w-7xl max-w-full mx-auto sticky top-0 z-10'>
       {isMobile ? <MobileNavbar/> : <DesktopNavbar/>}
     </div>
   );
