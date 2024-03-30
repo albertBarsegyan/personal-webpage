@@ -5,10 +5,11 @@ interface ButtonProps extends  PropsWithChildren {
   type?: 'submit' | 'reset' | 'button';
   onClick?: () => void;
   variant?: 'primary' | 'secondary' | 'icon';
-  className?: string
+  className?: string;
+  disabled?: boolean
 }
 
-export function Button({ type = 'button', children, onClick, variant = 'primary',className }:ButtonProps) {
+export function Button({ disabled = false, type = 'button', children, onClick, variant = 'primary',className }:ButtonProps) {
   const buttonStyles = classNames(className,{
     ['h-12 flex-center rounded-3xl px-8 font-bold']:true,
     ['bg-secondary border-0']: variant === 'primary',
@@ -17,7 +18,7 @@ export function Button({ type = 'button', children, onClick, variant = 'primary'
   });
 
   return (
-    <button className={buttonStyles} onClick={onClick} type={type}>
+    <button className={buttonStyles} onClick={onClick} type={type} disabled={disabled}>
       {children}
     </button>
   );

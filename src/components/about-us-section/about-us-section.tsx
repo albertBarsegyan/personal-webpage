@@ -16,7 +16,7 @@ export function AboutUsSection() {
 
       </div>
 
-      <div className='flex flex-col-reverse gap-x-0 md:gap-x-4 md:flex-row justify-between align-middle mt-10 md:mt-24'>
+      <div className='flex flex-col gap-x-0 md:gap-x-4 md:flex-row justify-between align-middle mt-10 md:mt-24'>
         <div>
           <CodeIllustration className='w-full md:w-100' size={400}/>
         </div>

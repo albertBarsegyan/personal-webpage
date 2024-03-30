@@ -3,6 +3,8 @@ import { Input } from '@/components/common/input/input';
 import { Textarea } from '@/components/common/textarea/textarea';
 import { Button } from '@/components/common/button/button';
 import { ChangeEvent, FormEvent, useReducer } from 'react';
+import classNames from 'classnames';
+import { ErrorText } from '@/components/common/error-text/error-text';
 
 const initialState = {
   name: '',
@@ -84,12 +86,12 @@ export function ContactUs() {
 
           <div className='w-full'>
             <Input placeholder='Email' className='w-full' value={state.email} onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange('email', e.target.value)} />
-            {state.errors.email && <span className="text-red-500">{state.errors.email}</span>}
+            <ErrorText errorMessage={state.errors.email}/>
           </div>
         </div>
         <div>
           <Textarea placeholder='Message' value={state.message} onChange={(e) => handleChange('message', e.target.value)} />
-          {state.errors.message && <span className="text-red-500">{state.errors.message}</span>}
+          <ErrorText errorMessage={state.errors.message}/>
         </div>
       </form>
       <div className='w-full flex justify-center mt-5'>

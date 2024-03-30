@@ -9,14 +9,20 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Power2 } from 'gsap/gsap-core';
 import { useOverflow } from '@/hooks/use-overflow';
+import classNames from 'classnames';
 
 const NavbarRoutes = [
   { id:0,name:'About',link:'/' },
   { id:1,name:'Services',link:'/' },
-  { id:2,name:'Technologies',link:'/' },
   { id:3,name:'How to',link:'/' },
   { id:4,name:'Open source',link:'/' },
 ];
+// yacko.software@gmail.com
+const EmailButton = ({ isMobile = false }:{isMobile?:boolean}) => {
+  return (
+    <a className={classNames('bg-secondary border-0 h-12 flex-center flex rounded-3xl px-8 font-bold email-button active:bg-primary duration-75',{ ['opacity-0 overflow-hidden']:isMobile })} href='mailto:yacko.software@gmail.com?subject=Software development'>EMAIL US</a>
+  );
+};
 
 const MobileNavbar = () => {
   const tl = useRef<any>(null);
@@ -59,7 +65,7 @@ const { contextSafe } = useGSAP(()=> {
 
   const toggleMenu =  contextSafe(() => {
     setIsMenuOpen(prev=> !prev);
-      isMenuOpen ? tl.current.reverse() : tl.current.play();
+      !isMenuOpen ? tl.current.play() : tl.current.reverse();
   });
 
   useOverflow(isMenuOpen);
@@ -83,12 +89,11 @@ const { contextSafe } = useGSAP(()=> {
 
       <div className='overflow-hidden opacity-0 mobile-menu-open fixed top-[140px] left-0 bottom-0 w-full h-0 bg-black/80 backdrop-blur-md z-10 '>
         <div className='px-5 flex flex-col justify-center gap-5 flex-shrink-0 mobile-menu-links-wrapper'>
-          {NavbarRoutes.map((route) => (<Link className='text-center text-2xl h-0 overflow-hidden' key={route.id} href={route.link}>{route.name}</Link>))}
+          {NavbarRoutes.map((route) => (<Link className='text-center active:text-secondary text-3xl h-0 overflow-hidden' key={route.id} href={route.link}>{route.name}</Link>))}
 
-          <Button className='opacity-0 overflow-hidden email-button' variant='primary' onClick={() => {
-          }}>EMAIL US</Button>
+          <EmailButton isMobile/>
 
-          <Button className='opacity-0 overflow-hidden contact-button' variant='secondary'>CONTACT US</Button>
+          <Button className='opacity-0 overflow-hidden contact-button active:bg-white active:text-black duration-75' variant='secondary'>CONTACT US</Button>
 
         </div>
       </div>
@@ -112,8 +117,8 @@ const DesktopNavbar = () => {
       <div className='flex-one-line gap-x-5'>
         <Button variant='secondary' onClick={() => {
         }}>CONTACT US</Button>
-        <Button variant='primary' onClick={() => {
-        }}>EMAIL US</Button>
+
+        <EmailButton/>
       </div>
     </div>
   );

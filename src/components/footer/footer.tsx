@@ -1,7 +1,4 @@
 import { LogoIcon } from '@/icons/logo.icon';
-// import { PhoneIcon } from '@/icons/phone-icon';
-// import { WhatsappIcon } from '@/icons/whatsapp-icon';
-// import { TelegramIcon } from '@/icons/telegram-icon';
 import { LinkedinIcon } from '@/icons/linkedin-icon';
 
 export function Footer() {
@@ -9,7 +6,6 @@ export function Footer() {
 
   return (
     <div className='mt-20 md:mt-20'>
-
       <div className='flex flex-col bg-primary p-5 md:p-10 rounded-3xl gap-x-4'>
         <div className='flex items-center justify-center'>
           <div className='max-w-2xl flex flex-col justify-center items-center gap-y-4'>
@@ -31,7 +27,7 @@ export function Footer() {
 
         </div>
       </div>
-      <p className='text-center text-base md:text-lg  mt-2 md:mt-4'>{currentYear} © YACKO - ALL RIGHTS RESERVED </p>
+      <p className='text-center text-base md:text-lg  mt-2 md:mt-4 mb-4'>{currentYear} © YACKO - ALL RIGHTS RESERVED </p>
     </div>
   );
 }
