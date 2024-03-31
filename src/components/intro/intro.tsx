@@ -3,8 +3,6 @@ import { LogoIcon } from '@/icons/logo.icon';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { Simulate } from 'react-dom/test-utils';
-import animationEnd = Simulate.animationEnd;
 import { useLocalStorage } from '@/hooks/use-storage';
 import { StorageKey } from '@/constants/storage-constant';
 import { useOverflow } from '@/hooks/use-overflow';
@@ -52,4 +50,4 @@ export function Intro() {
   );
 
   return null;
-};
+}

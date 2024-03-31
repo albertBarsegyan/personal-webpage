@@ -5,10 +5,7 @@ import { Navbar } from '@/components/navbar/navbar';
 import { PageLayout } from '@/components/layout/page-layout/page-layout';
 import  gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import LocalstorageUtil from '@/utils/localstorage-util';
-import { StorageKey } from '@/constants/storage-constant';
 import { Intro } from '@/components/intro/intro';
-import { useLocalStorage } from '@/hooks/use-storage';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
