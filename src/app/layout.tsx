@@ -5,6 +5,10 @@ import { Navbar } from '@/components/navbar/navbar';
 import { PageLayout } from '@/components/layout/page-layout/page-layout';
 import  gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import LocalstorageUtil from '@/utils/localstorage-util';
+import { StorageKey } from '@/constants/storage-constant';
+import { Intro } from '@/components/intro/intro';
+import { useLocalStorage } from '@/hooks/use-storage';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -33,8 +37,10 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#ffffff"/>
         <meta name="msapplication-config" content="/img/favicon/browserconfig.xml"/>
         <meta name="theme-color" content="#ffffff"/>
+        <title>{String(metadata.title)}</title>
       </head>
       <body className={montserrat.className}>
+        <Intro/>
         <div style={{ position: 'relative' }}>
           <Navbar/>
           <PageLayout>
