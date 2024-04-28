@@ -6,7 +6,7 @@ export function Footer() {
 
   return (
     <div className='mt-20 md:mt-20'>
-      <div className='flex flex-col bg-primary p-5 md:p-10 rounded-3xl gap-x-4'>
+      <div className='flex flex-col border-4 border-secondary p-5 md:p-10 rounded-3xl gap-x-4'>
         <div className='flex items-center justify-center'>
           <div className='max-w-2xl flex flex-col justify-center items-center gap-y-4'>
             <button type='button' className='button-reset text-secondary flex-one-line'>

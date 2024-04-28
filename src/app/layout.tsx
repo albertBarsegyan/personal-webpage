@@ -36,7 +36,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff"/>
         <title>{String(metadata.title)}</title>
       </head>
-      <body className={montserrat.className}>
+      <body className={`${montserrat.className} bg-primary`}>
         <Intro/>
         <div style={{ position: 'relative' }}>
           <Navbar/>

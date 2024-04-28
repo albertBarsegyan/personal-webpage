@@ -76,10 +76,10 @@ export function ContactUs() {
   };
 
   return (
-    <div className='mt-10 bg-primary rounded-3xl p-5 md:p-10'>
+    <div className='mt-10 bg-secondary rounded-3xl px-4 py-6 md:p-10'>
       <div className='flex justify-center items-center flex-col'>
-        <span className='text-2xl md:text-3xl font-bold'>Contact Us</span>
-        <p className='text-lg md:text-2xl mt-2 md:mt-5'>Let’s Build Your VR Experience</p>
+        <span className='text-xl md:text-3xl font-bold'>Contact Us</span>
+        <p className='text-sm md:text-2xl mt-2 md:mt-5'>Let’s Build Your VR Experience</p>
       </div>
       <form className='flex flex-col gap-4 mt-8 md:mt-20' onSubmit={handleSubmit}>
         <div className='flex items-center w-full justify-between gap-x-5'>
@@ -94,8 +94,8 @@ export function ContactUs() {
           <ErrorText errorMessage={state.errors.message}/>
         </div>
       </form>
-      <div className='w-full flex justify-center mt-5'>
-        <Button variant='secondary' type="submit" className='md:w-1/3 w-full h-14 text-2xl'>Send us</Button>
+      <div className='w-full flex justify-center mt-4 md:mt-5'>
+        <Button variant='filled' type="submit" className='md:w-1/3 w-full h-10 md:h-14 text-sm md:text-2xl'>Send us</Button>
       </div>
     </div>
   );

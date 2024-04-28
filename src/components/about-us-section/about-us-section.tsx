@@ -4,7 +4,7 @@ import { CodeIllustration } from '@/icons/code-illustration';
 
 export function AboutUsSection() {
   return (
-    <div className='mt-10 md:mt-20'>
+    <div id='aboutSection' className='mt-10 md:mt-20'>
       <div className='flex flex-col md:flex-row justify-between gap-x-4'>
 
         <h2 className='font-bold text-2xl'>Introduction</h2>

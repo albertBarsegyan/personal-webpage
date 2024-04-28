@@ -32,7 +32,7 @@ const separator = <div className='md:h-28 my-4 md:my-0 h-px w-full md:w-px bg-fo
         </div>
       </div>
 
-      <div className='flex items-start md:items-center md:justify-between flex-col md:flex-row py-6 px-4 md:px-16 rounded-3xl md:rounded-full bg-primary mt-10 md:mt-20'>
+      <div className='flex items-start md:items-center md:justify-between flex-col md:flex-row py-6 px-4 md:px-16 rounded-3xl md:rounded-full bg-secondary mt-10 md:mt-20'>
         <div className='flex flex-row items-center gap-x-2 w-full md:w-fit'>
           <div className='ml-1 sm:ml-0'>
             <MapCheckIcon/>
