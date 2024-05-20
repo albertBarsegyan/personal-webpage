@@ -13,13 +13,18 @@ import { RoutePath } from '@/constants/route-contants';
 import { useRouter } from 'next/navigation';
 
 const NavbarRoutes = [
-  { id:0,name:'About',contentId:'aboutSection' },
+  { id:0,name:'About Us',contentId:'aboutSection' },
+  { id:2,name:'Open Source',contentId:'openSource' },
   { id:1,name:'Services',contentId:'services' },
 ];
+
 // yacko.software@gmail.com
 const EmailButton = ({ isMobile = false }:{isMobile?:boolean}) => {
   return (
-    <a className={classNames('bg-secondary border-0 h-12 flex-center flex rounded-3xl px-8 font-bold email-button active:bg-secondary duration-75',{ ['opacity-0 overflow-hidden']:isMobile })} href='mailto:yacko.software@gmail.com?subject=Software development'>EMAIL US</a>
+    <Button
+      variant='primary'
+      // href='mailto:yacko.software@gmail.com?subject=Software development'
+    >EMAIL US</Button>
   );
 };
 
@@ -76,11 +81,11 @@ const { contextSafe } = useGSAP(()=> {
 
   return (
     <>
-      <div className='flex flex-row justify-between top-0 py-5 bg-primary/80 backdrop-blur-md z-10 px-4'>
+      <div className='flex flex-row justify-between top-4 mx-4 py-5 bg-blue-dark-1/80 backdrop-blur-md z-10 px-4 rounded-lg'>
         <div className='flex-one-line justify-between md:px-20 w-full gap-x-5'>
 
           <button type='button' onClick={()=>router.push(RoutePath.Home)} className='button-reset text-secondary flex-one-line'>
-            <LogoIcon className='w-20' size={60}/>
+            <LogoIcon className='w-12' size={48}/>
           </button>
 
           <Button onClick={toggleMenu} variant='icon' className='text-secondary'>
@@ -121,10 +126,11 @@ const DesktopNavbar = () => {
   const router = useRouter();
 
   return (
-    <div className='flex flex-row justify-between sticky top-0 py-5 bg-primary/80 backdrop-blur-md z-10 mx-auto lg:px-20'>
+    <div className='flex flex-row justify-between top-4 py-5 bg-blue-dark-1/80 backdrop-blur-md z-10 lg:px-20 rounded-lg mx-4'>
       <div className='flex-one-line justify-between w-1/2 gap-x-5'>
-        <button type='button' className='button-reset text-secondary flex-one-line'>
-          <LogoIcon size={100}/>
+        <button type='button' className='button-reset text-secondary flex-one-line flex gap-1'>
+          <LogoIcon size={48} color='#8B50FF'/>
+          <span className='text-2xl'>YACKO</span>
         </button>
 
         <div className='flex-one-line gap-5 flex-shrink-0'>
@@ -136,18 +142,14 @@ const DesktopNavbar = () => {
 
             return (<button key={route.id} onClick={handleScroll}>{route.name}</button>);
           })}
-          <button onClick={() => {
-            router.push(RoutePath.OpenSource);
-          }}>Open Source
-          </button>
         </div>
       </div>
 
       <div className='flex-one-line gap-x-5'>
+        <EmailButton/>
+
         <Button variant='secondary' onClick={() => {
         }}>CONTACT US</Button>
-
-        <EmailButton/>
       </div>
     </div>
   );
@@ -159,7 +161,7 @@ export function Navbar() {
   const isMobile = width <= 1100;
 
   return (
-    <div className='md:max-w-7xl max-w-full mx-auto sticky top-0 z-10'>
+    <div className='md:max-w-7xl max-w-full mx-auto top-4 sticky z-10'>
       {isMobile ? <MobileNavbar/> : <DesktopNavbar/>}
     </div>
   );

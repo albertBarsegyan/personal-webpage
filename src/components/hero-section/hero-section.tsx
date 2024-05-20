@@ -5,12 +5,15 @@ import { MapCheckIcon } from '@/icons/map-check-icon';
 import { MailIcon } from '@/icons/mail-icon';
 import { PhoneIcon } from '@/icons/phone-icon';
 import { LogoIcon } from '@/icons/logo.icon';
+import { RoundIcon } from '@/icons/round-icon';
+import { SectionLayout } from '@/components/layout/section-layout/section-layout';
 
 const separator = <div className='md:h-28 my-4 md:my-0 h-px w-full md:w-px bg-forth rounded-3xl'/>;
 
   export function HeroSection() {
   return (
-    <div className='mt-10'>
+    <div className='-mt-10 bg-blue-dark-1'>
+      <SectionLayout>
       <div className='w-full flex flex-col md:flex-row md:justify-between md:items-center'>
         <div className='mr-4'>
           <h1 className='md:text-5xl text-2xl'>Lorem ipsum dolor sit.</h1>
@@ -63,6 +66,7 @@ const separator = <div className='md:h-28 my-4 md:my-0 h-px w-full md:w-px bg-fo
           </div>
         </div>
       </div>
+      </SectionLayout>
     </div>
   );
 };

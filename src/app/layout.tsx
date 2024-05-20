@@ -2,12 +2,14 @@ import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import '../styles/globals.css';
 import { Navbar } from '@/components/navbar/navbar';
-import { PageLayout } from '@/components/layout/page-layout/page-layout';
+import { SectionLayout } from '@/components/layout/section-layout/section-layout';
 import  gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Intro } from '@/components/intro/intro';
+import { Courier_Prime } from 'next/font/google';
+import { RoundIcon } from '@/icons/round-icon';
 
-const montserrat = Montserrat({ subsets: ['latin'] });
+const courierPrime = Courier_Prime({ subsets:['latin'],weight:['400','700'] });
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -36,13 +38,16 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff"/>
         <title>{String(metadata.title)}</title>
       </head>
-      <body className={`${montserrat.className} bg-primary`}>
+      <body className={`${courierPrime.className} bg-primary`}>
         <Intro/>
-        <div style={{ position: 'relative' }}>
+        <div className='relative'>
+          <div className='absolute right-0 top-0'>
+            <RoundIcon/>
+          </div>
           <Navbar/>
-          <PageLayout>
+          {/*<SectionLayout>*/}
             {children}
-          </PageLayout>
+          {/*</SectionLayout>*/}
         </div>
       </body>
     </html>

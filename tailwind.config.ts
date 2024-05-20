@@ -9,13 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#170919',
-        ['secondary']: '#8b50ff',
-        ['third']:'#dcd8ff',
-        ['forth']:'#b9b0ff',
-        ['text-light']:'#ffffff',
-        ['text-dark']:'#2e384d',
-        ['danger']: '#ff6961'
+        ['violet']: '#8B50FF',
+        ['violet-dark']: '#671AFF',
+        ['violet-light-1']:'#A77BFF',
+        ['violet-light-2']:'#CAAFFF',
+        ['violet-light-3']:'#E5D8FF',
+        ['blue-dark-1']:'#191A2A',
+        ['blue-dark-2']: '#21233C'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
