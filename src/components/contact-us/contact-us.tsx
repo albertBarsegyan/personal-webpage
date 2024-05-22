@@ -3,7 +3,6 @@ import { Input } from '@/components/common/input/input';
 import { Textarea } from '@/components/common/textarea/textarea';
 import { Button } from '@/components/common/button/button';
 import { ChangeEvent, FormEvent, useReducer } from 'react';
-import classNames from 'classnames';
 import { ErrorText } from '@/components/common/error-text/error-text';
 
 const initialState = {
@@ -15,18 +14,18 @@ const initialState = {
     name: '',
     email: '',
     subject: '',
-    message: ''
-  }
+    message: '',
+  },
 };
 
 interface ReducerActionType {
-  value?: string
-  error?: string
-  type: 'SUBMIT' | 'CHANGE'
-  field?: string
+  value?: string;
+  error?: string;
+  type: 'SUBMIT' | 'CHANGE';
+  field?: string;
 }
 
-const reducer = (state: typeof initialState, action:ReducerActionType) => {
+const reducer = (state: typeof initialState, action: ReducerActionType) => {
   switch (action.type) {
     case 'CHANGE':
       return {
@@ -34,8 +33,8 @@ const reducer = (state: typeof initialState, action:ReducerActionType) => {
         [action?.field ?? '']: action.value,
         errors: {
           ...state.errors,
-          [action?.field ?? '']: action.error
-        }
+          [action?.field ?? '']: action.error,
+        },
       };
     case 'SUBMIT':
       return {
@@ -44,8 +43,8 @@ const reducer = (state: typeof initialState, action:ReducerActionType) => {
           name: !state.name.trim() ? 'Name is required' : '',
           email: !/\S+@\S+\.\S+/.test(state.email) ? 'Invalid email address' : '',
           subject: !state.subject.trim() ? 'Subject is required' : '',
-          message: !state.message.trim() ? 'Message is required' : ''
-        }
+          message: !state.message.trim() ? 'Message is required' : '',
+        },
       };
     default:
       return state;
@@ -55,7 +54,7 @@ const reducer = (state: typeof initialState, action:ReducerActionType) => {
 export function ContactUs() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const handleChange = (field:string, value:string) => {
+  const handleChange = (field: string, value: string) => {
     let error = '';
     if (field === 'email' && !/\S+@\S+\.\S+/.test(value)) {
       error = 'Invalid email address';
@@ -66,7 +65,7 @@ export function ContactUs() {
     dispatch({ type: 'CHANGE', field, value, error });
   };
 
-  const handleSubmit = (event:FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     dispatch({ type: 'SUBMIT' });
 
@@ -76,26 +75,36 @@ export function ContactUs() {
   };
 
   return (
-    <div className='mt-10 bg-secondary rounded-3xl px-4 py-6 md:p-10'>
-      <div className='flex justify-center items-center flex-col'>
-        <span className='text-xl md:text-3xl font-bold'>Contact Us</span>
-        <p className='text-sm md:text-2xl mt-2 md:mt-5'>Let’s Build Your VR Experience</p>
+    <div className="bg-secondary mt-10 rounded-3xl px-4 py-6 md:p-10">
+      <div className="flex flex-col items-center justify-center">
+        <span className="text-xl font-bold md:text-3xl">Contact Us</span>
+        <p className="mt-2 text-sm md:mt-5 md:text-2xl">Let’s Build Your VR Experience</p>
       </div>
-      <form className='flex flex-col gap-4 mt-8 md:mt-20' onSubmit={handleSubmit}>
-        <div className='flex items-center w-full justify-between gap-x-5'>
-
-          <div className='w-full'>
-            <Input placeholder='Email' className='w-full' value={state.email} onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange('email', e.target.value)} />
-            <ErrorText errorMessage={state.errors.email}/>
+      <form className="mt-8 flex flex-col gap-4 md:mt-20" onSubmit={handleSubmit}>
+        <div className="flex w-full items-center justify-between gap-x-5">
+          <div className="w-full">
+            <Input
+              placeholder="Email"
+              className="w-full"
+              value={state.email}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange('email', e.target.value)}
+            />
+            <ErrorText errorMessage={state.errors.email} />
           </div>
         </div>
         <div>
-          <Textarea placeholder='Message' value={state.message} onChange={(e) => handleChange('message', e.target.value)} />
-          <ErrorText errorMessage={state.errors.message}/>
+          <Textarea
+            placeholder="Message"
+            value={state.message}
+            onChange={(e) => handleChange('message', e.target.value)}
+          />
+          <ErrorText errorMessage={state.errors.message} />
         </div>
       </form>
-      <div className='w-full flex justify-center mt-4 md:mt-5'>
-        <Button variant='filled' type="submit" className='md:w-1/3 w-full h-10 md:h-14 text-sm md:text-2xl'>Send us</Button>
+      <div className="mt-4 flex w-full justify-center md:mt-5">
+        <Button variant="filled" type="submit" className="h-10 w-full text-sm md:h-14 md:w-1/3 md:text-2xl">
+          Send us
+        </Button>
       </div>
     </div>
   );

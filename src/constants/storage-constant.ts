@@ -1,3 +1,3 @@
 export const StorageKey = {
-  IsFirstLogin: 'IsFirstLogin'
+  IsFirstLogin: 'IsFirstLogin',
 };

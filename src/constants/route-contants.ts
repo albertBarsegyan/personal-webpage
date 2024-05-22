@@ -1,4 +1,4 @@
 export const RoutePath = {
   Home: '/',
-  OpenSource: 'open-source'
+  OpenSource: 'open-source',
 };

@@ -4,4 +4,4 @@ export default function Page() {
       <div>HELLO WORLD</div>
     </>
   );
-};
+}
