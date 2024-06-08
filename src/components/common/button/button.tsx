@@ -1,5 +1,5 @@
-import { PropsWithChildren } from 'react';
 import classNames from 'classnames';
+import { PropsWithChildren } from 'react';
 
 interface ButtonProps extends PropsWithChildren {
   type?: 'submit' | 'reset' | 'button';
@@ -18,11 +18,11 @@ export function Button({
   className,
 }: ButtonProps) {
   const buttonStyles = classNames(className, {
-    ['h-12 flex-center px-8 py-2 relative font-bold active:left-3 active:top-2 border border-blue-dark-1']: true,
-    ['bg-violet-dark']: variant === 'primary',
-    ['bg-white text-blue-dark-1']: variant === 'secondary',
+    ['h-12 flex-center px-8 py-2 relative font-bold']: true,
+    ['bg-violet-dark border border-blue-dark-1 active:left-3 active:top-2']: variant === 'primary',
+    ['bg-white text-blue-dark-1 border border-blue-dark-1 active:left-3 active:top-2']: variant === 'secondary',
     ['bg-white text-secondary border border-blue-dark-1']: variant === 'filled',
-    ['bg-transparent border-0']: variant === 'icon',
+    ['bg-transparent p-0']: variant === 'icon',
   });
 
   const buttonBackground = classNames({
@@ -36,7 +36,7 @@ export function Button({
       <button className={buttonStyles} onClick={onClick} type={type} disabled={disabled}>
         {children}
       </button>
-      <div className={buttonBackground} />
+      {variant !== 'icon' && <div className={buttonBackground} />}
     </div>
   );
 }

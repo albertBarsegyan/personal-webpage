@@ -1,11 +1,12 @@
 'use client';
-import { LogoIcon } from '@/icons/logo.icon';
-import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { useLocalStorage } from '@/hooks/use-storage';
+import { useRef } from 'react';
+
 import { StorageKey } from '@/constants/storage-constant';
 import { useOverflow } from '@/hooks/use-overflow';
+import { useLocalStorage } from '@/hooks/use-storage';
+import { LogoIcon } from '@/icons/logo.icon';
 import Timeline = gsap.core.Timeline;
 
 export function Intro() {

@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { IconsType } from '@/types/icons-type';
 
 export const PcIcon = ({ size, className }: IconsType) => (

@@ -1,5 +1,5 @@
-import { LogoIcon } from '@/icons/logo.icon';
 import { LinkedinIcon } from '@/icons/linkedin-icon';
+import { LogoIcon } from '@/icons/logo.icon';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

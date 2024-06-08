@@ -1,15 +1,14 @@
-import type { Metadata } from 'next';
-// import { Montserrat } from 'next/font/google';
 import '../styles/globals.css';
-import { Navbar } from '@/components/navbar/navbar';
-// import { SectionLayout } from '@/components/layout/section-layout/section-layout';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { Intro } from '@/components/intro/intro';
-import { Courier_Prime } from 'next/font/google';
-import { RoundIcon } from '@/icons/round-icon';
 
-const courierPrime = Courier_Prime({ subsets: ['latin'], weight: ['400', '700'] });
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import type { Metadata } from 'next';
+import { Montserrat } from 'next/font/google';
+
+import { Intro } from '@/components/intro/intro';
+import { Navbar } from '@/components/navbar/navbar';
+
+const courierPrime = Montserrat({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -26,28 +25,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
-        <link rel="manifest" href="/img/favicon/site.webmanifest" />
-        <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#8b50ff" />
-        <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="/static/img/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="/static/img/favicon/safari-pinned-tab.svg" color="#8b50ff" />
+        <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
         <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="msapplication-config" content="/img/favicon/browserconfig.xml" />
+        <meta name="msapplication-config" content="/static/img/favicon/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
         <title>{String(metadata.title)}</title>
       </head>
-      <body className={`${courierPrime.className} bg-primary`}>
+      <body className={courierPrime.className}>
         <Intro />
-        <div className="relative">
-          <div className="absolute right-0 top-0">
-            <RoundIcon />
-          </div>
-          <Navbar />
-          {/*<SectionLayout>*/}
-          {children}
-          {/*</SectionLayout>*/}
-        </div>
+        <Navbar />
+        {children}
       </body>
     </html>
   );

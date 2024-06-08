@@ -1,9 +1,10 @@
 'use client';
+import { ChangeEvent, FormEvent, useReducer } from 'react';
+
+import { Button } from '@/components/common/button/button';
+import { ErrorText } from '@/components/common/error-text/error-text';
 import { Input } from '@/components/common/input/input';
 import { Textarea } from '@/components/common/textarea/textarea';
-import { Button } from '@/components/common/button/button';
-import { ChangeEvent, FormEvent, useReducer } from 'react';
-import { ErrorText } from '@/components/common/error-text/error-text';
 
 const initialState = {
   name: '',

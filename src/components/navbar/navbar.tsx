@@ -1,15 +1,16 @@
 'use client';
-import { Button } from '@/components/common/button/button';
-import { LogoIcon } from '@/icons/logo.icon';
-import { useWindowSize } from '@/hooks/use-window-size';
-import { useRef, useState } from 'react';
-import { MenuIcon } from '@/icons/menu-icon';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Power2 } from 'gsap/gsap-core';
-import { useOverflow } from '@/hooks/use-overflow';
-import { RoutePath } from '@/constants/route-contants';
 import { useRouter } from 'next/navigation';
+import { useRef, useState } from 'react';
+
+import { Button } from '@/components/common/button/button';
+import { RoutePath } from '@/constants/route-contants';
+import { useOverflow } from '@/hooks/use-overflow';
+import { useWindowSize } from '@/hooks/use-window-size';
+import { LogoIcon } from '@/icons/logo.icon';
+import { MenuIcon } from '@/icons/menu-icon';
 import Timeline = gsap.core.Timeline;
 
 const NavbarRoutes = [
@@ -112,7 +113,7 @@ const MobileNavbar = () => {
             <LogoIcon className="w-12" size={48} />
           </button>
 
-          <Button onClick={toggleMenu} variant="icon" className="text-secondary">
+          <Button onClick={toggleMenu} variant="icon">
             <MenuIcon className="menu-icon" size={36} />
           </Button>
         </div>
